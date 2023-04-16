@@ -1,100 +1,5 @@
 
 
-// var storage = []
-// console.log(storage)
-// function run(){
-//     var str = document.getElementById("email").value.toLowerCase()
-//     useraname = str.split("@")[0]
-//     str = str.split("")
-//     console.log(useraname,str)
-//     var alpha = "abcdefghijklmnopqrstuvwxyz".split("")
-//     var num = "1234567890".split("")
-//     var mainbool = true
-//     var alphabool = false, numbool = false, Abool = false, Adotbool = true, dotbool = false, combool = false, legthbool = true, spacebool = true, existance = false, Alength = true
-
-
-
-    
-//     const tlds = [".com", ".org", ".net", ".edu", ".gov", ".mil", ".int", ".info", ".biz", ".pro", ".name", ".coop", ".mobi", ".asia", ".eu", ".aero", ".cat", ".jobs", ".tel", ".travel"];
-    
-//     var Acounting = 0
-//     existance = storage.some((i)=>i==str.join(""))
-//     // console.log(storage,existance)
-//     for(let i = 0; i < str.length; i++){
-//         if(str[i]==" "){
-//             spacebool = false
-//             mainbool = false
-//         }
-//         if(str[i]=="@"){
-//             Abool = true
-//             if(str[i+1]=="."){
-//                 Adotbool = false
-//             }
-//             Acounting++
-    
-//             if(Acounting>1){
-//                 Alength = false
-//             }
-            
-//         }
-//         if(str[i]=="."){
-//             dotbool = true
-//             let com = str.slice(i).join("")
-//             combool = tlds.some((i)=> i==com)
-            
-//             if(str[i+1]=="." || str[i+1]=="@"){
-//                 dotbool = false
-//             }
-            
-//         }
-//         for(let j = 0; j < alpha.length; j++){
-//             if(useraname[i]==alpha[j]){
-//                 alphabool = true
-//             }
-            
-//         }
-//         for(let j = 0; j < num.length; j++){
-            
-//             if(useraname[i]==num[j]){
-//                numbool = true
-//             }
-            
-//         }
-    
-//     }
-    
-//     if(str[str.length-1] == "."){
-//         dotbool = false
-        
-//     }
-//     if(str[str.length-1] == "@" || str[0]=="@"){
-//         Abool = false
-        
-//     }
-//     if(str.lenght>64){
-//         legthbool = false
-//     }
-//     if(alphabool && numbool && Abool && dotbool && combool && legthbool && spacebool && existance == false && Adotbool){
-//         alert("valid")
-//         console.log("valid")
-//         storage.push(str.join(""))
-//     }else{
-//         alert("invalid")
-//         console.log("invalid")
-//     }
-//     if(mainbool){
-//         alert("valid")
-//         console.log("valid")
-//         storage.push(str.join(""))
-//         document.getElementById("para").innerText = "valid mail"
-//     }else{
-//         alert("invalid")
-//     }
-// }
-
-
-
-// console.log(str)
 var database = []
 
 function run(){
@@ -210,3 +115,99 @@ function run(){
 }
 
 
+
+// var storage = []
+// console.log(storage)
+// function run(){
+//     var str = document.getElementById("email").value.toLowerCase()
+//     useraname = str.split("@")[0]
+//     str = str.split("")
+//     console.log(useraname,str)
+//     var alpha = "abcdefghijklmnopqrstuvwxyz".split("")
+//     var num = "1234567890".split("")
+//     var mainbool = true
+//     var alphabool = false, numbool = false, Abool = false, Adotbool = true, dotbool = false, combool = false, legthbool = true, spacebool = true, existance = false, Alength = true
+
+
+
+    
+//     const tlds = [".com", ".org", ".net", ".edu", ".gov", ".mil", ".int", ".info", ".biz", ".pro", ".name", ".coop", ".mobi", ".asia", ".eu", ".aero", ".cat", ".jobs", ".tel", ".travel"];
+    
+//     var Acounting = 0
+//     existance = storage.some((i)=>i==str.join(""))
+//     // console.log(storage,existance)
+//     for(let i = 0; i < str.length; i++){
+//         if(str[i]==" "){
+//             spacebool = false
+//             mainbool = false
+//         }
+//         if(str[i]=="@"){
+//             Abool = true
+//             if(str[i+1]=="."){
+//                 Adotbool = false
+//             }
+//             Acounting++
+    
+//             if(Acounting>1){
+//                 Alength = false
+//             }
+            
+//         }
+//         if(str[i]=="."){
+//             dotbool = true
+//             let com = str.slice(i).join("")
+//             combool = tlds.some((i)=> i==com)
+            
+//             if(str[i+1]=="." || str[i+1]=="@"){
+//                 dotbool = false
+//             }
+            
+//         }
+//         for(let j = 0; j < alpha.length; j++){
+//             if(useraname[i]==alpha[j]){
+//                 alphabool = true
+//             }
+            
+//         }
+//         for(let j = 0; j < num.length; j++){
+            
+//             if(useraname[i]==num[j]){
+//                numbool = true
+//             }
+            
+//         }
+    
+//     }
+    
+//     if(str[str.length-1] == "."){
+//         dotbool = false
+        
+//     }
+//     if(str[str.length-1] == "@" || str[0]=="@"){
+//         Abool = false
+        
+//     }
+//     if(str.lenght>64){
+//         legthbool = false
+//     }
+//     if(alphabool && numbool && Abool && dotbool && combool && legthbool && spacebool && existance == false && Adotbool){
+//         alert("valid")
+//         console.log("valid")
+//         storage.push(str.join(""))
+//     }else{
+//         alert("invalid")
+//         console.log("invalid")
+//     }
+//     if(mainbool){
+//         alert("valid")
+//         console.log("valid")
+//         storage.push(str.join(""))
+//         document.getElementById("para").innerText = "valid mail"
+//     }else{
+//         alert("invalid")
+//     }
+// }
+
+
+
+// console.log(str)
