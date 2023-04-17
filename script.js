@@ -3,11 +3,13 @@
 var database = []
 
 function run(){
-    var charectersbool = false, Adotbool = false, lastspecialbool = true, combool = false, lengthbool = true, spacebool = true, existance = true, Alengthbool = true, Astartbool = true, userlengthbool = false, passwordbool = false
-    
-    const tlds = [".com", ".org", ".net", ".edu", ".gov", ".mil", ".int", ".info", ".biz", ".pro", ".name", ".coop", ".mobi", ".asia", ".eu", ".aero", ".cat", ".jobs", ".tel", ".travel"];
+    var charectersbool = false,dotbool = true, Adotbool = false, lastspecialbool = true, combool = false, lengthbool = true, spacebool = true, existance = true, Alengthbool = true, Astartbool = true, userlengthbool = false, passwordbool = false
+    var alpha = "abcdefghijklmnopqrstuvwxyz".split("")
+    var num = "1234567890".split("")
+    const tlds = [".com", ".in", ".org", ".net", ".edu", ".gov", ".mil", ".int", ".info", ".biz", ".pro", ".name", ".coop", ".mobi", ".asia", ".eu", ".aero", ".cat", ".jobs", ".tel", ".travel"];
     // var str = "naveen@gmai.com"
     var str = document.getElementById("email").value.toLowerCase()
+    
     // storage
     database.some((i)=> i == str) ? existance = false : ""
     // str
@@ -16,12 +18,16 @@ function run(){
     for(let i = 0; i < str.length; i++){
         str[i] == "@" ? Acounting++ : ""
         Acounting > 1 ? Alengthbool = false : ""
+        if(str[i] == "."){
+            if(str[i+1] == "." || str[i+1] == "@"){
+                dotbool = false
+            }
+        }
     }
     
     str.length >= 64 ? lengthbool = false : ""
     
-    var alpha = "abcdefghijklmnopqrstuvwxyz".split("")
-    var num = "1234567890".split("")
+    
     // username
     username = str.split("@")[0]
     for(let i = 0; i < username.length; i++){
@@ -34,8 +40,7 @@ function run(){
         }
     }
     username.length >= 6 ? userlengthbool  = true : ""
-    Astartbool = alpha.some((i)=> i == username[0]) || num.some((i)=> i == username[0])
-    
+    Astartbool = alpha.some((i)=> i == username[0]) || num.some((i)=> i == username[0] || username[0] == ".")
     
     // doamin
     var domain = str.split('@')[1]
@@ -55,12 +60,13 @@ function run(){
                 
             }
         }
+        console.log(domain)
     }
     var para = document.getElementById("para")
     
-    document.getElementById("password").value == document.getElementById("password1").value != "" ? passwordbool = true : ""
+    // document.getElementById("password").value == document.getElementById("password1").value != "" ? passwordbool = true : ""
     
-    if(charectersbool && userlengthbool && spacebool && Alengthbool && Astartbool && lengthbool && lastspecialbool && combool && Adotbool){
+    if(charectersbool && userlengthbool && spacebool && Alengthbool && Astartbool && lengthbool && lastspecialbool && combool && Adotbool && dotbool){
         console.log("true")
         para.innerText = "valid email"
         para.style.color = "green"
@@ -70,6 +76,10 @@ function run(){
         console.log("false")
         para.style.color = "red"
         // alert("invalid")
+    }    
+    if(Alengthbool == false){
+        para.innerText = "email should have only '@'"
+        return
     }
     if(charectersbool == false){
         para.innerText = "charecters invalid"
@@ -103,8 +113,8 @@ function run(){
         para.innerText = "email should not end with '" + str[str.length-1] + "'"
         return
     }
-    if(Alengthbool == false){
-        para.innerText = "email should have only '@'"
+    if(dotbool == false){
+        para.innerText = "email sould not contain two adjacent '.' s"
         return
     }
 
